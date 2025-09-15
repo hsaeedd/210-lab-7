@@ -8,6 +8,14 @@ void displayArray(string* array);
 int main()
 {
     string* arr = new string[5];
+    reverseArray(arr);
+    cout << "Reversed array: ";
+    displayArray(arr);
+
+
+    delete[] arr;
+
+    return 0;
 
 
 }
@@ -19,15 +27,29 @@ string* reverseArray(string* array)
         cin >> *(array + i);
 
     }
+    cout << "Original array: " << endl;
+    for(int i = 0; i < 5; i++)
+    {
+        cout << *(array + i) << " ";
+    }
+
 
     for(int i = 0; i < 2; i++)
     {
-        
-
-
-
+        string rep = *(array + 1);
+        *(array + i) = *(array + (4 - i));
+        *(array + (4 - i)) = rep;
 
     }
     return array;
+}
+
+void displayArray(string* array)
+{
+    for(int i = 0; i < 5; i++)
+    {
+        cout << *(array + i) << " ";
+    }
+
 }
 
