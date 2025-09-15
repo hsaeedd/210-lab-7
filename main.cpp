@@ -36,7 +36,7 @@ string* reverseArray(string* array)
 
     for(int i = 0; i < 2; i++)
     {
-        string rep = *(array + 1);
+        string rep = *(array + i);
         *(array + i) = *(array + (4 - i));
         *(array + (4 - i)) = rep;
 
